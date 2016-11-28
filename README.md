@@ -1,6 +1,8 @@
 # tree-worker
 iterator files in Node.js 
 
+>  遍历并输出目录下的文件信息。
+
 ```
   npm install --save tree-worker
 ```
@@ -46,10 +48,12 @@ iterator files in Node.js
             atime: 2016-11-14T03:38:10.427Z,
             mtime: 2016-11-10T15:10:14.000Z,
             ctime: 2016-11-14T03:38:10.537Z,
-            birthtime: 2016-11-14T03:38:10.427Z },
+            birthtime: 2016-11-14T03:38:10.427Z 
+         },
          files: [ '._.DS_Store' ],
-         childrens: [ 'C:\\Users\\Administrator.05121115\\Desktop\\__MACOSX\\demo\\._.DS_Store' ] },
-        'C:\Users\Administrator.05121115\Desktop\__MACOSX\demo\._.DS_Store':
+         childrens: [ 'C:\\Users\\Administrator.05121115\\Desktop\\__MACOSX\\demo\\._.DS_Store' ] 
+        },
+      'C:\Users\Administrator.05121115\Desktop\__MACOSX\demo\._.DS_Store':
        { type: 'S_IFREG',
          paths:
           { root: 'C:\\',
@@ -73,7 +77,8 @@ iterator files in Node.js
             atime: 2016-11-14T03:38:10.427Z,
             mtime: 2016-07-12T15:46:34.000Z,
             ctime: 2016-11-14T03:38:10.428Z,
-            birthtime: 2016-11-14T03:38:10.427Z },
+            birthtime: 2016-11-14T03:38:10.427Z 
+         },
          files: [],
          childrens: [] 
         } 
