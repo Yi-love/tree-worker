@@ -1,0 +1,22 @@
+{
+  "name": "tree-worker",
+  "version": "1.0.0",
+  "description": "show the directry files list on Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yi-love/tree-worker.git"
+  },
+  "keywords": [
+    "fs"
+  ],
+  "author": "Jin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yi-love/tree-worker/issues"
+  },
+  "homepage": "https://github.com/Yi-love/tree-worker#readme"
+}
