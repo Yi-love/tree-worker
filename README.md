@@ -1,7 +1,9 @@
 # tree-worker
-iterator files in Node.js 
+iterator files in Node.js . ES6 
 
 >  遍历并输出目录下的文件信息。
+
+注意：使用的是`ES6`语法(ES6 syntax)。
 
 ```
   npm install --save tree-worker
@@ -20,7 +22,30 @@ iterator files in Node.js
   });
 ```
 
-## struct
+## methods
+
+### treeWorker.work([pt])
+
+*   `pt` `String`  directory path or file name.
+
+return `Promise` instance.
+
+## stat struct
+
+```
+  {
+    type : resource.type,
+    paths : path.parse(resource.path),
+    origin: resource.path,
+    encoding : 'utf-8',
+    stats : resource.stats,
+    files : resource.files,
+    childrens : []
+  }
+
+```
+
+example:
 
 ```js
    {

@@ -109,15 +109,11 @@ let workerIterator = function(stat){
 };
 
 let concatWorker = function(resource){
-    let stat = resource.stat , childrens = resource.childrens;
-
-    let stats = [];
-
+    let stats = [] , stat = resource.stat , childrens = resource.childrens;
     for (let i = 0 ; i < childrens.length ; i++ ){
         stats.push(childrens[i]);
         stat.childrens.push(childrens[i].origin);
     }
-
     return {stat : stat , stats : stats};
 };
 
@@ -136,25 +132,41 @@ let workerProcess = function(that , pt){
     return reader(pt ? pt : that.path).then(workerIterator).then(concatStatFun);
 };
 
+let formatPath = function(pt){
+    return pt && typeof pt === 'string' ? pt.trim() : '';
+};
+
 class TreeWorker{
     constructor(pt){
-        this.path = pt;
+        this.path = '';
         this.stat = {};
         this.isInit = false;
+        this.setPath(pt);
     }
     setStat(stat){
-        this.stat = stat;
+        if ( ({}).toString.call(stat) === '[object Object]' ) {
+            this.stat = stat;            
+        }
+        return this;
     }
     getStat(){
         return this.stat;
     }
+    setPath(pt){
+        this.path = formatPath(pt);
+        return this;
+    }
     work(pt){
         let _this = this;
+        pt = formatPath(pt);
+        if ( !this.path && !!pt ) {
+            return this.setPath(pt).work();
+        }
         if ( this.isInit ) {
             return workerProcess(this , pt).then(()=>{return _this;});
-        }else if ( pt ){
+        }else if ( !!pt ){
             return workerProcess(this).then(()=>{_this.isInit = true;}).then(()=>{
-                return workerProcess(this ,pt);
+                return workerProcess(_this ,pt);
             }).then(()=>{return _this;});
         }else{
             return workerProcess(this).then(()=>{_this.isInit = true;}).then(()=>{return _this;});

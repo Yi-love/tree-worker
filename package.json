@@ -1,6 +1,6 @@
 {
   "name": "tree-worker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "show the directry files list on Node.js",
   "main": "index.js",
   "scripts": {
