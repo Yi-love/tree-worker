@@ -8,6 +8,13 @@ iterator files in Node.js . ES6
 ```
   npm install --save tree-worker
 ```
+## import
+
+```js
+  var TreeWorker = require('tree-worker');
+  //or
+  import TreeWorker from 'tree-worker';
+```
 
 ## use
 ```js
